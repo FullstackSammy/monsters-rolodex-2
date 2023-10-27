@@ -1,41 +1,46 @@
-import logo from './logo.svg';
-import './App.css'
-import React, { Component } from 'react';
+import logo from "./logo.svg";
+import React, { Component } from "react";
+import "./App.css";
 
-class App extends Component {
+export default class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      name: 'Sam',
-      lastName: 'Nasstrom',
-      monsters: ['Loo', 'Boo'],
+      name: { firstName: "Sam", lastName: "Nasstrom" },
     };
-  };
+  }
 
   render() {
     return (
       <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hi {this.state.name}! what is your last name? Is it {this.state.lastName}?
-        </p>
-        <p>
-          And have you seen those two? Where is {this.state.monsters[0]} and {this.state.monsters[1]}?
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Hi {this.state.name.firstName}! Is your last name{" "}
+            {this.state.name.lastName}?
+          </p>
+          <button
+            onClick={() => {
+              this.setState(() => {
+                this.setState({
+                  name: { firstName: "Gabriel", lastName: "Jackson" },
+                });
+              });
+            }}
+          >
+            change name
+          </button>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
     );
   }
 }
-
-export default App;
