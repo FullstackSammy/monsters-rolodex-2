@@ -8,7 +8,8 @@ class App extends Component {
 
     this.state = {
       name: 'Sam',
-      lastName: 'Nasstrom'
+      lastName: 'Nasstrom',
+      monsters: ['Loo', 'Boo'],
     };
   };
 
@@ -19,6 +20,9 @@ class App extends Component {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Hi {this.state.name}! what is your last name? Is it {this.state.lastName}?
+        </p>
+        <p>
+          And have you seen those two? Where is {this.state.monsters[0]} and {this.state.monsters[1]}?
         </p>
         <a
           className="App-link"
