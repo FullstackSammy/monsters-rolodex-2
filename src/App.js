@@ -31,7 +31,7 @@ class App extends Component {
     this.setState(() => {
       return { searchField };
     });
-  }
+  };
 
   render() {
     console.log("render");
@@ -45,8 +45,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        <SearchBox onSearchChange={onSearchChange} />
-        <CardList monsters={filteredMonsters}/>
+        <SearchBox
+          onSearchChange={onSearchChange}
+          placeholder="search monster"
+          className="search-box"
+        />
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
